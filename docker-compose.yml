@@ -1,0 +1,25 @@
+services:
+  trazo:
+    build: .
+    image: trazo:latest
+    container_name: trazo
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - trazo_data:/data
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.routers.trazo.rule=Host(`${TRAZO_HOST:?define TRAZO_HOST en .env}`)
+      - traefik.http.routers.trazo.entrypoints=websecure
+      - traefik.http.routers.trazo.tls.certresolver=letsencrypt
+      - traefik.http.services.trazo.loadbalancer.server.port=3000
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  trazo_data:

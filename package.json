@@ -1,0 +1,38 @@
+{
+  "name": "trazo",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Maquetas móviles colaborativas en tiempo real: componentes, flujos, comentarios y prototipos.",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "author": "dvxlabs520",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dvxlabs520/trazo"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node --disable-warning=ExperimentalWarning server/index.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:realtime": "node --disable-warning=ExperimentalWarning scripts/realtime-test.mjs"
+  },
+  "dependencies": {
+    "lib0": "^0.2.119",
+    "ws": "^8.22.0",
+    "y-protocols": "^1.0.7",
+    "yjs": "^13.6.33"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "html-to-image": "^1.11.13",
+    "jspdf": "^4.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "y-websocket": "^3.1.0"
+  }
+}
